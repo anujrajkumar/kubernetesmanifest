@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-test-app
-          image: vishal7500/sader:26
+          image: vishal7500/sader:27
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9090
