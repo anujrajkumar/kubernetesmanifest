@@ -1,5 +1,8 @@
 node {
     def app
+    stages{
+
+    
 
     stage('Clone repository') {
       
@@ -36,5 +39,6 @@ node {
                 kubernetesDeploy configs: 'deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'Kid', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
             }
         }
+    }
     }
 }
