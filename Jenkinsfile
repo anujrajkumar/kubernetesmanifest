@@ -8,6 +8,9 @@ node {
     }
 
     stage('Update GIT') {
+        steps{
+
+        
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
@@ -26,6 +29,7 @@ node {
     }
   }
 }
+    }
     stage('deploy to kubernetes'){
         steps{
             script{
