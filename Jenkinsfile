@@ -29,7 +29,7 @@ node {
     stage('deploy to kubernetes'){
         steps{
             script{
-                kubernetesDeploy (configs: 'deployment.yaml', kubeconfigId: 'k8sconfig')
+                kubernetesDeploy configs: 'deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'Kid', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
             }
         }
     }
