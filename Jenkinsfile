@@ -35,15 +35,20 @@ pipeline {
   }
 }
     }
-    stage('deploy to kubernetes'){
-        steps{
-            script{
-                kubernetesDeploy configs: 'deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubernetes_updated', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
-            }
+    stage('kuch bhi'){
+            steps{
+                 withKubeConfig([credentialsId: 'kubernetes_updated', configs: 'deployment.yaml'])
+    // stage('deploy to kubernetes'){
+    //     steps{
+    //         script{
+    //             kubernetesDeploy configs: 'deployment.yaml', kubeConfig: [path: ''], kubeconfigId: 'kubernetes_updated', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
+    //        }
         }
     }
     }
 }
+
+
 
 
 
