@@ -35,8 +35,7 @@ pipeline {
   }
 }
     }
-    stage('kuch bhi'){
-            steps{
+    
     //              withKubeConfig([credentialsId: 'kubernetes_updated', configs: 'deployment.yaml'])
     stage('deploy to k8s'){
             steps{
@@ -50,6 +49,8 @@ pipeline {
 }
 
     }
+}
+}
 }
 
 
