@@ -41,7 +41,7 @@ pipeline {
             steps{
                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8SL', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
     // some block
-                    sh "kubectl apply -f deploymentservice.yaml"
+                    sh "/usr/local/bin/kubectl apply -f deploymentservice.yaml"
 }
     }
 }
