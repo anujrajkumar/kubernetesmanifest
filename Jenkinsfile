@@ -36,15 +36,7 @@ pipeline {
 }
     }
     
-    //              withKubeConfig([credentialsId: 'kubernetes_updated', configs: 'deployment.yaml'])
-    stage('deploy to k8s'){
-            steps{
-                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8SL', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
-    // some block
-                    sh "/var/lib/jenkins/workspace/kubectl apply -f deploymentservice.yaml"
-}
-    }
-}
+    
     }
 }
 
