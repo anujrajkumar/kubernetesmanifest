@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_anujrajkumar_kubernetesmanifest_1704282514294-pr-trigger-input-set
+  identifier: Build_anujrajkumar_kubernetesmanifest_1704282514294prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: demo
+  pipeline:
+    identifier: Build_anujrajkumar_kubernetesmanifest_1704282514294
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
